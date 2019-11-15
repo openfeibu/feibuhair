@@ -62,8 +62,9 @@
                         <div class="noo-sidebar-wrap">
                             <div class="widget widget_search">
                                 <h4 class="widget-title">Search</h4>
-                                <form action="" onSubmit="return checkSearchForm()">
-                                    <input type="search"  name="keywords" id="keyword"  class="form-control" value="{$search_keywords|escape}" placeholder="Enter keyword to search..." />
+                                <form action="{$script_name}.php" onSubmit="return checkSearchForm()" method="get">
+                                    <input type="hidden" name="id" value="{$category}">
+                                    <input type="text"  name="keywords" id="keyword"  class="form-control" value="{$search_keywords|escape}" placeholder="Enter keyword to search..." />
                                     <button type="submit" class="noo-search-submit"><i class="icon_search"></i></button>
                                 </form>
                             </div>

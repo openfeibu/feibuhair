@@ -50,6 +50,7 @@ $brand = isset($_REQUEST['brand']) && intval($_REQUEST['brand']) > 0 ? intval($_
 $price_max = isset($_REQUEST['price_max']) && intval($_REQUEST['price_max']) > 0 ? intval($_REQUEST['price_max']) : 0;
 $price_min = isset($_REQUEST['price_min']) && intval($_REQUEST['price_min']) > 0 ? intval($_REQUEST['price_min']) : 0;
 $filter_attr_str = isset($_REQUEST['filter_attr']) ? htmlspecialchars(trim($_REQUEST['filter_attr'])) : '0';
+$search_keywords = isset($_REQUEST['keywords']) ? htmlspecialchars(trim($_REQUEST['keywords'])) : '';
 
 $filter_attr_str = trim(urldecode($filter_attr_str));
 $filter_attr_str = preg_match('/^[\d\.]+$/',$filter_attr_str) ? $filter_attr_str : '';
@@ -332,6 +333,10 @@ $cache_id = sprintf('%X', crc32($cat_id . '-' . $display . '-' . $sort  .'-' . $
             }
         }
     }
+    if($search_keywords)
+    {
+        $ext .= ' AND g.goods_name like "%' .$search_keywords.'%"';
+    }
 
     assign_template('c', array($cat_id));
 
@@ -351,7 +356,7 @@ $cache_id = sprintf('%X', crc32($cat_id . '-' . $display . '-' . $sort  .'-' . $
     $smarty->assign('price_min',        $price_min);
     $smarty->assign('filter_attr',      $filter_attr_str);
     $smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-c$cat_id.xml" : 'feed.php?cat=' . $cat_id); // RSS URL
-
+    $smarty->assign('search_keywords',      $search_keywords);
     if ($brand > 0)
     {
         $arr['all'] = array('brand_id'  => 0,
