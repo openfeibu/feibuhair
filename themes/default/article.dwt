@@ -1,0 +1,49 @@
+<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+<body>
+<div class="noo-spinner">
+    <div class="sk-rotating-plane"></div>
+</div>
+<div class="site">
+    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="main">
+        <div class="section mt-10 mb-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="single-post">
+                            <div class="entry-header">
+                                <h1>{$article.title|escape:html} </h1>
+                            </div>
+                            <div class="content-featured">
+                                <div class="content-thumb">
+                                    <img src="{$article.file_url}" alt="" />
+                                </div>
+                            </div>
+                            <div class="entry-content">
+                              {$article.content}
+                            </div>
+                            <div class="entry-footer">
+										<span class="tags-links">
+
+										</span>
+                                <div class="single-social">
+                                    <span>Share: </span>
+                                    <div class="content-share">
+                                        <div class="noo-social social-share">
+                                            <a href="#" class="noo-share"><i class="fa fa-facebook"></i></a>
+                                            <a href="#" class="noo-share"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" class="noo-share"><i class="fa fa-google-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+</body>
+</html>

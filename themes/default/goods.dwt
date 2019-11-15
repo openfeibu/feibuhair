@@ -1,0 +1,188 @@
+<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+{insert_scripts files='common.js'}
+{insert_scripts files='jquery.json-1.3.js,transport.js,utils.js'}
+<body>
+<div class="noo-spinner">
+  <div class="sk-rotating-plane"></div>
+</div>
+<div class="site">
+  <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+  <div id="main">
+    <div class="single-product-content">
+      <div class="images">
+        <div class="single-product-thumbail">
+          <!-- {if $pictures}-->
+          <!-- {foreach from=$pictures item=picture}-->
+            <div class="item-img">
+              <img src="{$picture.img_url}" alt="{$goods.goods_name}" />
+            </div>
+          <!--{/foreach}-->
+          <!-- {else} -->
+          <div class="item-img">
+            <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
+          </div>
+          <!-- {/if}-->
+
+        </div>
+        <div class="single-product-slider">
+          <div id="product-detail-slider" class="owl-carousel">
+            <!-- {if $pictures}-->
+            <!-- {foreach from=$pictures item=picture}-->
+            <div class="item-img">
+              <img src="{$picture.img_url}" alt="{$goods.goods_name}" />
+            </div>
+            <!--{/foreach}-->
+            <!-- {else} -->
+            <div class="item-img">
+              <a href="{$goods.goods_img}"><img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
+            </div>
+            <!-- {/if}-->
+          </div>
+        </div>
+      </div>
+      <div class="summary">
+        <h1 class="product-title">Modern Red Chair</h1>
+        <div class="price">
+          <ins id="ECS_SHOPPRICE">{$goods.shop_price_formated}</ins>
+          <del>{$goods.market_price}</del>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae tortor urna. Mauris non tincidunt ipsum, vel dignissim ipsum. Morbi erat sapien, hendrerit ut convallis eu, pretium eleifend sapien</p>
+        </div>
+        <!-- <p class="stock in-stock">In stock</p> -->
+        <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+        <div class="choose-attrs" >
+        <!-- {foreach from=$specification item=spec key=spec_key name=spec_name} -->
+          <div id="choose-attr-1" class="li p-choose clearfix" >
+            <div class="dt">{$spec.name}:</div>
+            <!-- {foreach from=$spec.values item=value key=key} -->
+            <div class="dd attr {if $key eq 0}active{/if}" >{$value.label}</div>
+            <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} style="visibility: hidden;"/>
+            <!-- {/foreach} -->
+          </div>
+          <!-- {/foreach} -->
+        </div>
+        </form>
+        <form class="cart">
+          <div id="ECS_GOODS_AMOUNT"></div>
+          <a type="submit" class="add-to-cart" style="float: left;" >chat me</a>
+        </form>
+        <!-- <div class="compare-button">
+            <a href="#">Compare</a>
+        </div> -->
+        <div class="wishlist-button">
+          <a href="#">Wishlist</a>
+        </div>
+        <div class="product-meta">
+            <span class="posted_in">
+                Categories:
+              <!-- {foreach from=$parent_cats item=parent_cats_item key=parent_cats_key name=parent_cats_name} -->
+              <a href="{$parent_cats_item.url}">{$parent_cats_item.cat_name}</a> <!--{if !$smarty.foreach.categories_goods_name.first}-->,<!-- {/if} -->
+              <!-- {/foreach} -->
+            </span>
+        </div>
+        <div class="noo-social-share">
+          <span class="share-name">Share:</span>
+          <a href="#" class="noo-share"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="noo-share"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="noo-share"><i class="fa fa-google-plus"></i></a>
+          <a href="#" class="noo-share"><i class="fa fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="section clearboth">
+      <div class="container">
+        <div class="commerce-tabs">
+          <ul class="nav nav-tabs tabs">
+            <li class="active">
+              <a data-toggle="tab" href="#tab-description">Description</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab-description">
+              {$goods.goods_desc}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section pt-9 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="noo-section-title">
+              <h3><span>Related Products</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section pb-9">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="noo-product-grid shopList">
+            <!--{foreach name=linked_goods from=$linked_goods item=goods}-->
+            <div class="noo-product-item col-lg-2 col-md-3 col-sm-4 col-xs-6">
+              <div class="noo-product-inner">
+                <a href="{$goods.url}">
+                  <div class="noo-product-thumbnail">
+                    <img src="{$goods.goods_img}" alt="{$goods.goods_name}" />
+                  </div>
+                  <h3>{$goods.name}</h3>
+                  <div class="price">
+                    <del>{$goods.market_price}</del>
+                    <ins> <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->
+                      {$goods.shop_price}<!--{/if}--></ins>
+                  </div>
+                  <div class="noo-loop-cart">
+                    <span class="button add-to-cart"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!--{/foreach}-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+
+<script>
+  <!-- {literal} -->
+  var goodsId = {$goods_id};
+  onload = function(){
+    changePrice();
+  }
+  function changePrice()
+  {
+    var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+    var qty = 1;
+
+    Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+  }
+  function changePriceResponse(res)
+  {
+    if (res.err_msg.length > 0)
+    {
+      alert(res.err_msg);
+    }
+    else
+    {
+      if (document.getElementById('ECS_GOODS_AMOUNT'))
+        document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+    }
+  }
+  $(".attr").click(function(){
+      $(this).parent().find(".attr").removeClass("active");
+      $(this).parent().find("input").attr("checked",false);
+      $(this).addClass("active");
+      $(this).next().attr("checked",true);
+      changePrice();
+  });
+  <!-- {/literal} -->
+</script>
+</body>
+</html>

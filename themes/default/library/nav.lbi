@@ -1,0 +1,36 @@
+<nav class="noo-main-menu">
+    <ul class="nav-collapse navbar-nav">
+
+        <li class="menu-item-has-children">
+            <a href="../index.php">Home</a>
+
+        </li>
+        <li class="menu-item-has-children">
+            <a href="javascript:;">Product</a>
+            <ul class="sub-menu">
+                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+                <!-- {if $smarty.foreach.nav_top_list.last}-->
+                <li><a href="{$nav.url}"
+                    <!-- {if $nav.opennew eq 1} -->
+                    target="_blank"
+                    <!-- {/if} -->
+                    >{$nav.name}</a></li>
+                <!-- {else} -->
+                <li><a href="{$nav.url}"
+
+                    <!-- {if $nav.opennew eq 1} -->
+                    target="_blank"
+                    <!-- {/if} -->
+                    >{$nav.name}</a></li>
+                <!-- {/if} -->
+                <!-- {if $nav.active eq 1} -->
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+
+            </ul>
+        </li>
+        <li><a href="article_cat.php?id=4">News</a></li>
+        <li><a href="user.php?act=message_list">Contact</a></li>
+    </ul>
+</nav>
+{insert name='member_info'}

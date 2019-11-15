@@ -1,0 +1,38 @@
+<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+<body>
+<div class="noo-spinner">
+    <div class="sk-rotating-plane"></div>
+</div>
+<div class="site">
+    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="main">
+        <div class="section mt-10 mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="noo-blog">
+                            <!-- {foreach from=$artciles_list item=article} -->
+                            <div class="noo-blog-item style-2">
+                                <a class="noo-blog-thumbnail" href="{$article.url}" data-image="{$article.file_url}">
+                                    <span class="view-link"></span>
+                                </a>
+                                <div class="noo-blog-entry">
+                                    <h3><a href="{$article.url}">{$article.title|escape:html}</a></h3>
+                                    <p>{$article.content|cut_html_str:256}</p>
+                                    <a class="view_link" href="{$article.url}">
+                                        read more<i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- {/foreach} -->
+                        </div>
+                        <!-- #BeginLibraryItem "/library/pages.lbi" --> <!-- #EndLibraryItem -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+</body>
+</html>
