@@ -515,6 +515,7 @@ $_LANG['passport_js']['passwd_balnk'] = '- 密码中不能包含空格';
 
 
 /* user_clips.dwt js 语言文件 */
+$_LANG['clips_js']['email_empty'] = 'Email为空';
 $_LANG['clips_js']['msg_title_empty'] = '留言标题为空';
 $_LANG['clips_js']['msg_content_empty'] = '留言内容为空';
 $_LANG['clips_js']['msg_title_limit'] = '留言标题不能超过200个字';

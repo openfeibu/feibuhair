@@ -515,6 +515,7 @@ $_LANG['passport_js']['passwd_balnk'] = '- The password entered can`t have blank
 
 
 /* user_clips.dwt js 语言文件 */
+$_LANG['clips_js']['email_empty'] = 'Email is blank';
 $_LANG['clips_js']['msg_title_empty'] = 'Title message is blank.';
 $_LANG['clips_js']['msg_content_empty'] = 'Message content is blank.';
 $_LANG['clips_js']['msg_title_limit'] = 'Message title should not exceed 200 charaters';

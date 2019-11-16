@@ -85,8 +85,9 @@ if (in_array($action, $ui_arr))
     $smarty->assign('helps',      get_shop_help());        // 网店帮助
     $smarty->assign('data_dir',   DATA_DIR);   // 数据目录
     $smarty->assign('action',     $action);
-    $smarty->assign('lang',       $_LANG);
+
 }
+$smarty->assign('lang',       $_LANG);
 $smarty->assign('navigator_list',        get_navigator());  //自定义导航栏
 //用户中心欢迎页
 if ($action == 'default')
@@ -1264,14 +1265,17 @@ elseif ($action == 'act_add_message')
 {
     include_once(ROOT_PATH . 'includes/lib_clips.php');
 
+    $email = isset($_POST['email']) && !empty($_POST['email']) ? $_POST['email'] : '';
+    $email = !$email && isset($_SESSION['user_name']) && !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
     $message = array(
         'user_id'     => $user_id,
-        'user_name'   => $_SESSION['user_name'],
-        'user_email'  => $_SESSION['email'],
+        'name'        => isset($_POST['name']) ? $_POST['name'] : '',
+        'user_name'   => isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '' ,
+        'user_email'  => $email ,
         'msg_type'    => isset($_POST['msg_type']) ? intval($_POST['msg_type'])     : 0,
         'msg_title'   => isset($_POST['msg_title']) ? trim($_POST['msg_title'])     : '',
         'msg_content' => isset($_POST['msg_content']) ? trim($_POST['msg_content']) : '',
-        'order_id'=>empty($_POST['order_id']) ? 0 : intval($_POST['order_id']),
+        'order_id'=> isset($_POST['order_id']) && empty($_POST['order_id']) ? 0 : intval($_POST['order_id']),
         'upload'      => (isset($_FILES['message_img']['error']) && $_FILES['message_img']['error'] == 0) || (!isset($_FILES['message_img']['error']) && isset($_FILES['message_img']['tmp_name']) && $_FILES['message_img']['tmp_name'] != 'none')
          ? $_FILES['message_img'] : array()
      );

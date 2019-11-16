@@ -101,10 +101,15 @@ function editPassword()
 function submitMsg()
 {
   var frm         = document.forms['formMsg'];
+  var email   = frm.elements['email'].value;
   var msg_title   = frm.elements['msg_title'].value;
   var msg_content = frm.elements['msg_content'].value;
   var msg = '';
 
+  if (email.length == 0)
+  {
+    msg += email_empty + '\n';
+  }
   if (msg_title.length == 0)
   {
     msg += msg_title_empty + '\n';

@@ -8,10 +8,12 @@
 
     <div id="main">
         <div class="section">
+
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="cover-image" src="themes/default/images/slider/banner3.jpg" /></div>
-                    <div class="swiper-slide"><img class="cover-image" src="themes/default/images/slider/banner2.jpg" /></div>
+                    {foreach from=$ads name=ads item=ads_item}
+                    <div class="swiper-slide"><img class="cover-image" src="{$ads_item.ad_code}" /></div>
+                    {/foreach}
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>

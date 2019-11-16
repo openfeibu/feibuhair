@@ -61,23 +61,21 @@
                                 <h3><span>Contact Us</span></h3>
                                 <p>Leave A Message</p>
                             </div>
-                            <form class="contact-form">
+                            <form action="user.php" method="post" enctype="multipart/form-data" name="formMsg" onSubmit="return submitMsg()"  class="contact-form">
                                 <div class="row">
                                     <div class="comment-form-author col-md-6">
-                                        <input id="author" name="author" type="text" placeholder="Your name *" value="" size="30" />
+                                        <input id="msg_title" name="msg_title type="text" placeholder="Your name *" value="" size="30" />
                                     </div>
                                     <div class="comment-form-email col-md-6">
                                         <input id="email" name="email" type="text" placeholder="Your email *" value="" size="30" />
                                     </div>
-                                    <div class="comment-form-url col-md-12">
-                                        <input id="url" name="url" type="text" placeholder="Website" value="" size="30" />
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="comment-form-comment col-md-12">
-                                        <textarea placeholder="Your comment *" id="comment" name="comment" cols="40" rows="6"></textarea>
+                                        <textarea placeholder="Your comment *" id="msg_content" name="msg_content" cols="40" rows="6"></textarea>
                                     </div>
                                     <div class="form-submit col-md-12">
+                                        <input type="hidden" name="act" value="act_add_message" />
                                         <input name="submit" type="submit" id="submit" class="submit" value="Post comment" />
                                     </div>
                                 </div>
@@ -90,6 +88,10 @@
     </div>
     <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
 </div>
-
+<script type="text/javascript">
+    {foreach from=$lang.clips_js item=item key=key}
+    var {$key} = "{$item}";
+    {/foreach}
+</script>
 </body>
 </html>
