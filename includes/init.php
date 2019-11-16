@@ -293,6 +293,8 @@ if ((DEBUG_MODE & 4) == 4)
     include(ROOT_PATH . 'includes/lib.debug.php');
 }
 
+$GLOBALS['smarty']->assign('user_info', get_user_info());
+
 /* 判断是否支持 Gzip 模式 */
 if (!defined('INIT_NO_SMARTY') && gzip_enabled())
 {

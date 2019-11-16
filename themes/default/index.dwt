@@ -97,8 +97,13 @@
                                                     </div>
                                                     <h3>{$goods_item.name}</h3>
                                                     <div class="price">
-                                                        <del>{$goods_item.market_price}</del>
-                                                        <ins>{$goods_item.shop_price}</ins>
+                                                        {if $user_info}
+                                                            <del>{$goods_item.market_price}</del>
+                                                            <ins> <!--{if $goods_item.promote_price neq "" } -->{$goods_item.promote_price}<!--{else}-->
+                                                                {$goods_item.shop_price}<!--{/if}--></ins>
+                                                        {else}
+                                                            <a href="user.php">please login</a>
+                                                        {/if}
                                                     </div>
                                                     <div class="noo-loop-cart">
                                                         <span class="button add-to-cart"></span>

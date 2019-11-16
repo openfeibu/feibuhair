@@ -116,6 +116,10 @@ function get_user_info($id=0)
     {
         $id = $_SESSION['user_id'];
     }
+    if(!$id) {
+        return [];
+    }
+
     $time = date('Y-m-d');
     $sql  = 'SELECT u.user_id, u.email, u.user_name, u.user_money, u.pay_points'.
             ' FROM ' .$GLOBALS['ecs']->table('users'). ' AS u ' .
