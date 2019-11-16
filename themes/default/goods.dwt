@@ -42,14 +42,14 @@
         </div>
       </div>
       <div class="summary">
-        <h1 class="product-title">Modern Red Chair</h1>
+        <h1 class="product-title">{$goods.goods_name}</h1>
         <div class="price">
-          <ins id="ECS_SHOPPRICE">{$goods.shop_price_formated}</ins>
-          <del>{$goods.market_price}</del>
+          <ins id="ECS_GOODS_AMOUNT">{$goods.shop_price_formated}</ins>
+          <!-- <del>{$goods.market_price}</del> -->
         </div>
-        <div class="description">
+        <!--<div class="description">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae tortor urna. Mauris non tincidunt ipsum, vel dignissim ipsum. Morbi erat sapien, hendrerit ut convallis eu, pretium eleifend sapien</p>
-        </div>
+        </div>-->
         <!-- <p class="stock in-stock">In stock</p> -->
         <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
         <div class="choose-attrs" >
@@ -65,7 +65,7 @@
         </div>
         </form>
         <form class="cart">
-          <div id="ECS_GOODS_AMOUNT"></div>
+          <!--<div id="ECS_GOODS_AMOUNT"></div>-->
           <a type="submit" class="add-to-cart" style="float: left;" >chat me</a>
         </form>
         <!-- <div class="compare-button">
