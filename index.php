@@ -165,7 +165,7 @@ $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
         }
         $smarty->assign('cat_rec', $cat_rec);
     }
-
+    $smarty->assign('ads', ads(1));
     /* 页面中的动态内容 */
     assign_dynamic('index');
 //}

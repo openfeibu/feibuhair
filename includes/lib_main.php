@@ -1672,6 +1672,7 @@ function assign_template($ctype = '', $catlist = array())
     $smarty->assign('searchkeywords', $searchkeywords);
 }
 
+
 /**
  * 将一个本地时间戳转成GMT时间戳
  *
@@ -2065,6 +2066,25 @@ function url_domain()
     }
 
     return $root;
+}
+
+
+function ads($position_id)
+{
+    $sql  = 'SELECT a.ad_id, a.position_id, a.media_type, a.ad_link, a.ad_code, a.ad_name, p.ad_width, '.
+        'p.ad_height, p.position_style, RAND() AS rnd ' .
+        'FROM ' . $GLOBALS['ecs']->table('ad') . ' AS a '.
+        'LEFT JOIN ' . $GLOBALS['ecs']->table('ad_position') . ' AS p ON a.position_id = p.position_id ' .
+        "WHERE enabled = 1 AND a.position_id = '" . $position_id . "' ORDER BY a.ad_id asc ";
+
+    $res = $GLOBALS['db']->GetAll($sql);
+
+    foreach ($res AS $key => $row)
+    {
+        $res[$key]['ad_code'] = (strpos($row['ad_code'], 'http://') === false && strpos($row['ad_code'], 'https://') === false) ?
+            DATA_DIR . "/afficheimg/$row[ad_code]" : $row['ad_code'];
+    }
+    return $res;
 }
 
 ?>
