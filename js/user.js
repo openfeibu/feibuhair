@@ -110,10 +110,10 @@ function submitMsg()
   {
     msg += email_empty + '\n';
   }
-  if (msg_title.length == 0)
-  {
-    msg += msg_title_empty + '\n';
-  }
+  // if (msg_title.length == 0)
+  // {
+  //   msg += msg_title_empty + '\n';
+  // }
   if (msg_content.length == 0)
   {
     msg += msg_content_empty + '\n'

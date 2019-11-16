@@ -64,7 +64,7 @@
                             <form action="user.php" method="post" enctype="multipart/form-data" name="formMsg" onSubmit="return submitMsg()"  class="contact-form">
                                 <div class="row">
                                     <div class="comment-form-author col-md-6">
-                                        <input id="msg_title" name="msg_title type="text" placeholder="Your name *" value="" size="30" />
+                                        <input id="name" name="name" type="text" placeholder="Your name *" value="" size="30" />
                                     </div>
                                     <div class="comment-form-email col-md-6">
                                         <input id="email" name="email" type="text" placeholder="Your email *" value="" size="30" />

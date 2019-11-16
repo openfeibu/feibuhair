@@ -357,4 +357,5 @@ $_LANG['logistic_tracking'] = '雲起物流';
 
 /* 移動版全民分銷開通引導頁 */
 $_LANG['lead'] = '移動版';
+$_LANG['name'] = '姓名';
 ?>

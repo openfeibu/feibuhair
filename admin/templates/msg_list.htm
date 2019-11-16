@@ -28,8 +28,10 @@
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
       <a href="javascript:listTable.sort('msg_id'); ">{$lang.msg_id}</a>{$sort_msg_id}
     </th>
+    <th><a href="javascript:listTable.sort('name'); ">{$lang.name}</a>{$sort_name}</th>
     <th><a href="javascript:listTable.sort('user_name'); ">{$lang.user_name}</a>{$sort_user_name}</th>
-    <th><a href="javascript:listTable.sort('msg_title'); ">{$lang.msg_title}</a>{$sort_msg_title}</th>
+    <th><a href="javascript:listTable.sort('user_email'); ">{$lang.email}</a>{$sort_user_email}</th>
+    <th>{$lang.msg_content}</th>
     <th><a href="javascript:listTable.sort('msg_type'); ">{$lang.msg_type}</a>{$sort_msg_type}</th>
     <th><a href="javascript:listTable.sort('msg_time'); ">{$lang.msg_time}</a>{$sort_msg_time}</th>
     <th><a href="javascript:listTable.sort('msg_status'); ">{$lang.msg_status}</a>{$sort_msg_status}</th>
@@ -39,8 +41,10 @@
   {foreach from =$msg_list item=msg}
   <tr>
     <td><input type="checkbox" name="checkboxes[]" value="{$msg.msg_id}" />{$msg.msg_id}</td>
+    <td align="center">{$msg.name}</td>
     <td align="center">{$msg.user_name}</td>
-    <td align="left">{$msg.msg_title|truncate:40|escape:html}</td>
+    <td align="left">{$msg.user_email}</td>
+    <td align="left">{$msg.msg_content|escape:html}</td>
     <td align="center">{$msg.msg_type}{if $msg.order_id}<br><a href="order.php?act=info&order_id={$msg.order_id}">{$msg.order_sn}{/if}</a></td>
     <td align="center"  nowrap="nowrap">{$msg.msg_time}</td>
     {if $msg.msg_area eq 0}

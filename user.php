@@ -29,7 +29,7 @@ $back_act='';
 
 // 不需要登录的操作或自己验证是否登录（如ajax处理）的act
 $not_login_arr =
-array('sms_get_password','ajax_validate_sms','ajax_validate_vcode','login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer', 'message_list');
+array('sms_get_password','ajax_validate_sms','ajax_validate_vcode','login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer', 'message_list','act_add_message');
 
 /* 显示页面的action列表 */
 $ui_arr = array('sms_get_password','register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
@@ -1266,7 +1266,8 @@ elseif ($action == 'act_add_message')
     include_once(ROOT_PATH . 'includes/lib_clips.php');
 
     $email = isset($_POST['email']) && !empty($_POST['email']) ? $_POST['email'] : '';
-    $email = !$email && isset($_SESSION['user_name']) && !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
+    $email = !$email && isset($_SESSION['user_email']) && !empty($_SESSION['user_email']) ? $_SESSION['user_email'] : $email;
+
     $message = array(
         'user_id'     => $user_id,
         'name'        => isset($_POST['name']) ? $_POST['name'] : '',
@@ -1288,6 +1289,7 @@ elseif ($action == 'act_add_message')
         //     $matrix = new matrix();
         //     $matrix->update_order_buyer_message($message);
         // }
+
         show_message($_LANG['add_message_success'], $_LANG['message_list_lnk'], 'user.php?act=message_list&order_id=' . $message['order_id'],'info');
     }
     else

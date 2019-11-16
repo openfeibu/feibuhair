@@ -357,4 +357,5 @@ $_LANG['logistic_tracking'] = 'Logistic Tracking';
 
 /* 移动版全民分销开通引导页 */
 $_LANG['lead'] = 'wap';
+$_LANG['name'] = 'name';
 ?>
