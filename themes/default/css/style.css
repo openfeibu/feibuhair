@@ -3658,12 +3658,11 @@ a.go-to-top.on:hover, a.go-to-top:hover a.go-to-top:focus.on:hover {
 .navbar-nav > li > a {
 	padding: 0;
 }
-
 .noo-main-menu .navbar-nav > li > a {
     position: relative;
     font-size: 18px;
     font-weight: 600;
-    color: #555555;
+    color: #555;
     text-transform: uppercase;
     font-family: 'Dosis', sans-serif;
     letter-spacing: 0.5px;
@@ -3674,6 +3673,12 @@ a.go-to-top.on:hover, a.go-to-top:hover a.go-to-top:focus.on:hover {
     -ms-transform: translate(0, 2px);
     -o-transform: translate(0, 2px);
     transform: translate(0, 2px);
+}
+
+.index-nav .noo-main-menu .navbar-nav > li > a,.index-nav .navbar-meta ul > li > a {
+ 
+    color: #fff;
+   
 }
 
 .noo-main-menu .navbar-nav > li > a:before {
