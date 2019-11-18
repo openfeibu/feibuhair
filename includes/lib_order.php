@@ -1114,7 +1114,7 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0, $rec_type
     }
 
     /* 计算商品的促销价格 */
-    $spec_price             = spec_price($spec);
+    $spec_price             = spec_price($spec,$goods_id);
     $goods_price            = get_final_price($goods_id, $num, true, $spec);
     $goods['market_price'] += $spec_price;
     $goods_attr             = get_goods_attr_info($spec);

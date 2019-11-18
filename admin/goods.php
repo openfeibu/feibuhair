@@ -2206,7 +2206,7 @@ elseif ($_REQUEST['act'] == 'product_list')
     $smarty->assign('attribute_count_3',        ($attribute_count + 3));
     $smarty->assign('product_sn',               $goods['goods_sn'] . '_');
     $smarty->assign('product_number',           $_CFG['default_storage']);
-
+    $smarty->assign('product_price',           $goods['shop_price']);
     /* 取商品的货品 */
     $product = product_list($goods_id, '');
 
@@ -2330,7 +2330,7 @@ elseif ($_REQUEST['act'] == 'product_remove')
     }
 
     /* 货品库存 */
-    $product = get_product_info($product_id, 'product_number, goods_id');
+    $product = get_product_info($product_id, 'product_shop_price,product_number, goods_id');
 
     /* 删除货品 */
     $sql = "DELETE FROM " . $ecs->table('products') . " WHERE product_id = '$product_id'";
@@ -2391,7 +2391,7 @@ elseif ($_REQUEST['act'] == 'edit_product_number')
     $product_number       = intval($_POST['val']);
 
     /* 货品库存 */
-    $product = get_product_info($product_id, 'product_number, goods_id');
+    $product = get_product_info($product_id, 'product_shop_price,product_number, goods_id');
 
     /* 修改货品库存 */
     $sql = "UPDATE " . $ecs->table('products') . " SET product_number = '$product_number' WHERE product_id = '$product_id'";
@@ -2406,7 +2406,28 @@ elseif ($_REQUEST['act'] == 'edit_product_number')
         }
     }
 }
+/*------------------------------------------------------ */
+//-- 修改货品库存
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_product_shop_price')
+{
+    check_authz_json('goods_manage');
 
+    $product_id       = intval($_POST['id']);
+    $product_shop_price       = intval($_POST['val']);
+
+    /* 货品库存 */
+    $product = get_product_info($product_id, 'product_shop_price,product_number, goods_id');
+
+    /* 修改货品库存 */
+    $sql = "UPDATE " . $ecs->table('products') . " SET product_shop_price = '$product_shop_price' WHERE product_id = '$product_id'";
+    $result = $db->query($sql);
+    if ($result)
+    {
+        clear_cache_files();
+        make_json_result($product_shop_price);
+    }
+}
 /*------------------------------------------------------ */
 //-- 货品添加 执行
 /*------------------------------------------------------ */
