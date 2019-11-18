@@ -2674,6 +2674,7 @@ function recombination_attribute($goods_id)
             }
         }
     }
+    var_dump($products);exit;
     //echo json_encode($products);
 }
 function make_str($arrays, $i = 0)
@@ -2702,4 +2703,22 @@ function make_str($arrays, $i = 0)
 
 
     return $result;
+}
+function combos($data, &$all = array(), $group = array(), $val = null, $i = 0,$key=0)
+{
+    if (isset($val)) {
+        $group[$key] = $val;
+    }
+
+    if ($i >= count($data)) {
+        array_push($all, $group);
+    } else {
+
+        foreach ($data[array_keys($data)[$i]] as $key => $v) {
+            combos($data, $all, $group,  $v, $i+1,array_keys($data)[$i]);
+        }
+
+    }
+
+    return $all;
 }

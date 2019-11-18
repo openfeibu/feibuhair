@@ -2227,7 +2227,16 @@ elseif ($_REQUEST['act'] == 'product_list')
         }
     }
     if(empty($new_attribute))$new_attribute = $_attribute;
+    $attribute_combos = [];
+    foreach ($new_attribute as $new_attribute_key => $new_attribute_item)
+    {
+        $attribute_combos[$new_attribute_item['attr_id']] = $new_attribute_item['attr_values'];
+        //$attribute_combos[] = $new_attribute_item['attr_values'];
+    }
 
+    $attribute_combos_list = combos($attribute_combos);
+
+    $smarty->assign('attribute_combos_list',  $attribute_combos_list);
     $smarty->assign('attribute',                $new_attribute);
     $smarty->assign('ur_here',      $_LANG['18_product_list']);
     $smarty->assign('action_link',  array('href' => 'goods.php?act=list', 'text' => $_LANG['01_goods_list']));
@@ -2439,6 +2448,7 @@ elseif ($_REQUEST['act'] == 'product_add_execute')
     $product['attr']            = $_POST['attr'];
     $product['product_sn']      = $_POST['product_sn'];
     $product['product_number']  = $_POST['product_number'];
+    $product['product_shop_price']  = $_POST['product_shop_price'];
 
     /* 是否存在商品id */
     if (empty($product['goods_id']))
@@ -2466,7 +2476,7 @@ elseif ($_REQUEST['act'] == 'product_add_execute')
     {
         //过滤
         $product['product_number'][$key] = empty($product['product_number'][$key]) ? (empty($_CFG['use_storage']) ? 0 : $_CFG['default_storage']) : trim($product['product_number'][$key]); //库存
-
+        $product['product_shop_price'][$key] = $product['product_shop_price'][$key] ? $product['product_shop_price'][$key] : 0; //库存
         //获取规格在商品属性表中的id
         foreach($product['attr'] as $attr_key => $attr_value)
         {
@@ -2509,7 +2519,7 @@ elseif ($_REQUEST['act'] == 'product_add_execute')
         }
 
         /* 插入货品表 */
-        $sql = "INSERT INTO " . $GLOBALS['ecs']->table('products') . " (goods_id, goods_attr, product_sn, product_number)  VALUES ('" . $product['goods_id'] . "', '$goods_attr', '$value', '" . $product['product_number'][$key] . "')";
+        $sql = "INSERT INTO " . $GLOBALS['ecs']->table('products') . " (goods_id, goods_attr, product_sn, product_number,product_shop_price)  VALUES ('" . $product['goods_id'] . "', '$goods_attr', '$value', '" . $product['product_number'][$key] . "','".$product['product_shop_price'][$key]."')";
         if (!$GLOBALS['db']->query($sql))
         {
             continue;
