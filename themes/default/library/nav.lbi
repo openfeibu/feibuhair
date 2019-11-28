@@ -5,7 +5,7 @@
             <a href="../index.php">Home</a>
 
         </li>
-        <!--{foreach from=$categories item=cat}-->
+        <!--{foreach from=$all_categories item=cat}-->
         <li class="menu-item-has-children">
             <a href="{$cat.url}">{$cat.name|escape:html}</a>
             <!--{if $cat.cat_id }-->
