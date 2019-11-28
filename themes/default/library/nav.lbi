@@ -5,30 +5,18 @@
             <a href="../index.php">Home</a>
 
         </li>
+        <!--{foreach from=$categories item=cat}-->
         <li class="menu-item-has-children">
-            <a href="javascript:;">Product</a>
+            <a href="{$cat.url}">{$cat.name|escape:html}</a>
+            <!--{if $cat.cat_id }-->
             <ul class="sub-menu">
-                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
-                <!-- {if $smarty.foreach.nav_top_list.last}-->
-                <li><a href="{$nav.url}"
-                    <!-- {if $nav.opennew eq 1} -->
-                    target="_blank"
-                    <!-- {/if} -->
-                    >{$nav.name}</a></li>
-                <!-- {else} -->
-                <li><a href="{$nav.url}"
-
-                    <!-- {if $nav.opennew eq 1} -->
-                    target="_blank"
-                    <!-- {/if} -->
-                    >{$nav.name}</a></li>
-                <!-- {/if} -->
-                <!-- {if $nav.active eq 1} -->
-                <!-- {/if} -->
+                <!--{foreach from=$cat.cat_id item=child}-->
+                <li><a href="{$child.url}">{$child.name|escape:html}</a></li>
                 <!-- {/foreach} -->
-
             </ul>
+            <!-- {/if} -->
         </li>
+        <!-- {/foreach} -->
         <li><a href="article_cat.php?id=4">News</a></li>
         <li><a href="user.php?act=message_list">Contact</a></li>
     </ul>
