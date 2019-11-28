@@ -81,6 +81,15 @@
                                     <!--{/foreach}-->
                                 </ul>
                             </div>
+                            {elseif count($categories)}
+                            <div class="widget widget_categories">
+                                <h4 class="widget-title">Categories</h4>
+                                <ul>
+                                    <!--{foreach name=categories from=$categories item=category_item}-->
+                                    <li><a href="{$category_item.url}">{$category_item.name}</a></li>
+                                    <!--{/foreach}-->
+                                </ul>
+                            </div>
                             {/if}
                             <!--
                             <div class="widget widget_recent_entries">
