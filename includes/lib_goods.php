@@ -925,17 +925,27 @@ function spec_price($spec)
 function spec_price($spec, $goods_id)
 {
     if (!empty($spec)) {
+        $spec_arr = [];
         if (is_array($spec)) {
-            foreach ($spec as $key=>$val) {
-                $spec[$key]=addslashes($val);
+            $arr = combine($spec,count($spec));
+
+            foreach ($arr as $key => $val)
+            {
+                $spec_arr[] = '"'.implode("|", $val).'"';
             }
-            $spec_str = implode("|", $spec);
+//            foreach ($spec as $key=>$val) {
+//                $spec[$key]=addslashes($val);
+//            }
+//            $spec_str = implode("|", $spec);
         } else {
             $spec=addslashes($spec);
             $spec_str = $spec;
+            $spec_arr[] = $spec_str;
         }
+        $spec_str = implode(',',$spec_arr);
+
         $shop_price = $GLOBALS['db']->getOne("SELECT shop_price FROM ".$GLOBALS['ecs']->table("goods")." WHERE goods_id=".$goods_id);
-        $product_shop_price = $GLOBALS['db']->getOne("SELECT product_shop_price FROM ".$GLOBALS['ecs']->table("products")." WHERE goods_id=".$goods_id." AND goods_attr='".$spec_str."' ");
+        $product_shop_price = $GLOBALS['db']->getOne("SELECT product_shop_price FROM ".$GLOBALS['ecs']->table("products")." WHERE goods_id=".$goods_id." AND goods_attr in (".$spec_str.") ");
         $price = $product_shop_price - $shop_price;
     } else {
         $price = 0;

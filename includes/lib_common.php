@@ -2009,6 +2009,23 @@ function get_final_price($goods_id, $goods_num = '1', $is_spec_price = false, $s
     return $final_price;
 }
 
+function combine($arr, $m, $isRepeat = 0, $b = [], $n = 0, $res = []) {
+    !$n && $n = $m;
+    if($m == 1) {
+        foreach($arr as $item)
+            //拼接中间变量到数组中去
+            $res[] = array_merge($b, [$item]);
+    } else {
+        foreach($arr as $key => $item) {
+            $b[$n - $m] = $item;
+            $tmp = $arr;
+            if(!$isRepeat) unset($tmp[$key]);// 如果不可重复
+            $res = combine($tmp, $m-1, $isRepeat, $b, $n, $res);
+        }
+    }
+    return $res;
+}
+
 /**
  * 将 goods_attr_id 的序列按照 attr_id 重新排序
  *
