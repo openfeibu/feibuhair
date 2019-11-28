@@ -71,7 +71,7 @@
                 <div class="row">
                     {foreach from=$categories_goods item=categories_goods_item key=categories_goods_key name=categories_goods_name}
                     <div class="col-sm-12">
-                        <div>{$categories_goods_item.name}</div>
+                        <div><a href="{$categories_goods_item.url}">{$categories_goods_item.name}</a></div>
                     </div>
                     {foreach from=$categories_goods_item.goods item=goods_item key=goods_key name=goods_name}
                         <div class="noo-product-item col-lg-2 col-md-3 col-sm-4 col-xs-6">
