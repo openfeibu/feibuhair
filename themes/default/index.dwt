@@ -37,7 +37,7 @@
                 </div>
             </div> -->
         </div>
-        <div class="section pt-3">
+        <div class="section pt-3 w1200">
             <div class="container-fluid">
                 <div class="row">
                     <div class="features">
@@ -142,15 +142,47 @@
                             <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
-													<strong>Allen</strong>
+													<strong>feibuhair_wholesale</strong>
 												</span>
-                                <p>whatApp:+8615920541738</p>
-                                <p>Instagram:+8615920541738</p>
+                                <p>whatApp:+8615627646093</p>
+                                <p>Instagram:feibuhair_wholesale</p>
+                                <p>email:erin@feibu.info</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8615627646093" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_wholesale/" class="col-sm-4 col-xs-2 "><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:erin@feibu.info"  class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>feibuhair__zoey</strong>
+												</span>
+                                <p>whatApp:+8618026405484</p>
+                                <p>Instagram:feibuhair__zoey</p>
                                 <p>email:595642191@qq.com</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a href="https://api.whatsapp.com/send?phone=8615920541739" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a href="https://api.whatsapp.com/send?phone=86手机号码；" class="col-sm-4 col-xs-2 "><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="mailto:595642191@qq.com"  class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618026405484" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair__zoey/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:zoey@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>feibuhair_eve</strong>
+												</span>
+                                <p>whatApp:+8613660012185</p>
+                                <p>Instagram:feibuhair_eve</p>
+                                <p>email:eve@feibuhair.com</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8613660012185" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_eve/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:eve@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -158,47 +190,15 @@
                             <img src="themes/default/images/avatar/nanren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
-													<strong>Allen</strong>
+													<strong>feibuhair_jester</strong>
 												</span>
-                                <p>whatApp:+8615920541738</p>
-                                <p>Instagram:+8615920541738</p>
-                                <p>email:595642191@qq.com</p>
+                                <p>whatApp:+8618027206535</p>
+                                <p>Instagram:feibuhair_jester</p>
+                                <p>email:sales06@feibuhair.com</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a href="" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
-                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
-                            <div class="noo-testimonial-content">
-												<span class="testimonial-author">
-													<strong>Allen</strong>
-												</span>
-                                <p>whatApp:+8615920541738</p>
-                                <p>Instagram:+8615920541738</p>
-                                <p>email:595642191@qq.com</p>
-                                <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a href="" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
-                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
-                            <div class="noo-testimonial-content">
-												<span class="testimonial-author">
-													<strong>Allen</strong>
-												</span>
-                                <p>whatApp:+8615920541738</p>
-                                <p>Instagram:+8615920541738</p>
-                                <p>email:595642191@qq.com</p>
-                                <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a href="" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618027206535" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_jester/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:sales06@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
