@@ -69,6 +69,43 @@
         <div class="section pb-9">
             <div class="container-fluid">
                 <div class="row">
+                    {foreach from=$categories_goods item=categories_goods_item key=categories_goods_key name=categories_goods_name}
+                    <div class="col-sm-12">
+                        <div>{$categories_goods_item.name}</div>
+                    </div>
+                    {foreach from=$categories_goods_item.goods item=goods_item key=goods_key name=goods_name}
+                        <div class="noo-product-item col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <div class="noo-product-inner">
+                                <a href="{$goods_item.url}">
+                                    <div class="noo-product-thumbnail">
+                                        <img src="{$goods_item.goods_img}" alt="{$goods_item.name}" />
+                                    </div>
+                                    <h3>{$goods_item.name}</h3>
+                                    <div class="price">
+                                        {if $user_info}
+                                            <del>{$goods_item.market_price}</del>
+                                            <ins> <!--{if $goods_item.promote_price neq "" } -->{$goods_item.promote_price}<!--{else}-->
+                                                {$goods_item.shop_price}<!--{/if}--></ins>
+                                        {else}
+                                            <a href="user.php">please login</a>
+                                        {/if}
+                                    </div>
+                                    <div class="noo-loop-cart">
+                                        <span class="button add-to-cart"></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {/foreach}
+
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+
+        <div class="section pb-9">
+            <div class="container-fluid">
+                <div class="row">
                     <div class="col-sm-12">
                         <div class="tabbable noo-product-filter text-center">
                             <ul class="nav nav-tabs">
