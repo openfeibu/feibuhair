@@ -23,8 +23,11 @@
                             {$filter_attr.filter_attr_name|escape:html}:
                             <select class="noo-woo-filter" onchange="js_href(this);">
                                 <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                                {if $attr.attr_value}
                                 <option value="{$attr.url}" <!-- {if $attr.selected} --> selected <!-- {/if} --> >{$attr.attr_value}</option>
+                                {/if}
                                 <!--{/foreach}-->
+
                             </select>
                             <!--{/foreach}-->
                         </div>

@@ -60,8 +60,10 @@
           <div id="choose-attr-1" class="li p-choose clearfix" >
             <div class="dt">{$spec.name}:</div>
             <!-- {foreach from=$spec.values item=value key=key} -->
+            {if $value.label}
             <div class="dd attr {if $key eq 0}active{/if}" >{$value.label}</div>
             <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} style="visibility: hidden;"/>
+            {/if}
             <!-- {/foreach} -->
           </div>
           <!-- {/foreach} -->
