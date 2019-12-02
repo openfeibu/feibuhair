@@ -102,7 +102,7 @@ function submitMsg()
 {
   var frm         = document.forms['formMsg'];
   var email   = frm.elements['email'].value;
-  var msg_title   = frm.elements['msg_title'].value;
+  var msg_name   = frm.elements['name'].value;
   var msg_content = frm.elements['msg_content'].value;
   var msg = '';
 
@@ -110,18 +110,18 @@ function submitMsg()
   {
     msg += email_empty + '\n';
   }
-  // if (msg_title.length == 0)
-  // {
-  //   msg += msg_title_empty + '\n';
-  // }
+  if (msg_name.length == 0)
+  {
+    msg += msg_name_empty + '\n';
+  }
   if (msg_content.length == 0)
   {
     msg += msg_content_empty + '\n'
   }
 
-  if (msg_title.length > 200)
+  if (msg_name.length > 200)
   {
-    msg += msg_title_limit + '\n';
+    msg += msg_name_limit + '\n';
   }
 
   if (msg.length > 0)
