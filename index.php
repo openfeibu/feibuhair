@@ -168,7 +168,38 @@ $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
     $smarty->assign('ads', ads(1));
     /* 页面中的动态内容 */
     assign_dynamic('index');
+
+    /*
+    $sql = 'SELECT g.shop_price,g.goods_id,ga.goods_attr_id,ga.attr_price,ga.attr_value,a.attr_name ' .
+        ' FROM ' . $GLOBALS['ecs']->table('goods') . ' AS g left join ' .
+        $GLOBALS['ecs']->table('goods_attr') . ' AS ga on ga.goods_id = g.goods_id  ' .
+        'join '. $GLOBALS['ecs']->table('attribute').' AS a on ga.attr_id = a.attr_id '.
+        ' WHERE g.cat_id IN (5) and a.attr_name = "'. 'Inches' .'" order by g.goods_id desc';
+
+    $res = $GLOBALS['db']->getAll($sql);
+
+    $arr = array();
+    foreach ($res AS $idx => $row)
+    {
+        $product_sql = 'SELECT * FROM '. $GLOBALS['ecs']->table('products') . ' WHERE goods_id = ' . $row['goods_id'] .
+            ' AND goods_attr like "%'.$row['goods_attr_id'].'%"';
+        $product_res = $GLOBALS['db']->getRow($product_sql);
+
+        if($product_res)
+        {
+
+           // var_dump($product_res);
+           // var_dump('UPDATE ' . $ecs->table('products') . " SET product_shop_price =  '".$row['attr_price']."' where product_id = ".$product_res['product_id']);
+            //$GLOBALS['db']->query('UPDATE ' . $ecs->table('products') . " SET product_shop_price =  '".$row['attr_price']."' where product_id = ".$product_res['product_id']);
+
+        }
+
+    }
+    var_dump("success");
+    exit;
+    */
 //}
+
 
 //$smarty->display('index.dwt', $cache_id);
 $smarty->display('index.dwt');
