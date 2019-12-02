@@ -2159,6 +2159,88 @@ elseif ($_REQUEST['act'] == 'product_list')
 {
     admin_priv('goods_manage');
 
+    /*test*/
+    /*
+    $all_goods_sql = "SELECT * FROM ". $ecs->table('goods') . " ORDER BY goods_id DESC ";
+
+    $all_goods_res = $db->getAll($all_goods_sql);
+
+    foreach ($all_goods_res as $key => $goods)
+    {
+        $attribute = get_goods_specifications_list($goods['goods_id']);
+
+        if (empty($attribute))
+        {
+            continue;
+        }
+        $_attribute = [];
+        foreach ($attribute as $attribute_value)
+        {
+            $_attribute[$attribute_value['attr_id']]['attr_values'][] = $attribute_value['attr_value'];
+            $_attribute[$attribute_value['attr_id']]['attr_id'] = $attribute_value['attr_id'];
+            $_attribute[$attribute_value['attr_id']]['attr_name'] = $attribute_value['attr_name'];
+        }
+        $product = product_list($goods['goods_id'], '');
+        $attribute_combos = [];
+        foreach ($_attribute as $new_attribute_key => $new_attribute_item)
+        {
+            $attribute_combos[$new_attribute_item['attr_id']] = $new_attribute_item['attr_values'];
+            //$attribute_combos[] = $new_attribute_item['attr_values'];
+            $attribute_combos[$new_attribute_item['attr_id']] = array_filter($attribute_combos[$new_attribute_item['attr_id']]);
+        }
+
+        $attribute_combos_list = combos($attribute_combos);
+        $goods_attr_list = array_column($product['product'],'goods_attr');
+        //var_dump($goods_attr_list);
+        $attribute_combos_list = array_diff_assoc2_deep2($attribute_combos_list,$goods_attr_list);
+        if(!$attribute_combos_list)
+        {
+            continue;
+        }
+        $attr = [];
+        foreach ($attribute_combos_list as $attribute_combos_key => $attribute_combos_item)
+        {
+            foreach($attribute_combos_item as $attribute_combos_item_key => $attribute_combos_item_item) {
+                $attr[$attribute_combos_item_key][] = $attribute_combos_item_item;
+            }
+        }
+        foreach($attr as $attr_key => $attr_value)
+        {
+            $is_spec_list[$attr_key] = 'true';
+
+            $value_price_list[$attr_key] = $attr_value[$key] . chr(9) . ''; //$key，当前
+
+            $id_list[$attr_key] = $attr_key;
+        }
+        //var_dump($attr);exit;
+        //var_dump($attribute_combos_list);
+        for($i = 0;$i<count($attribute_combos_list);$i++)
+        {
+            $is_spec_list = $value_price_list = $id_list = [];
+            foreach($attr as $attr_key => $attr_value)
+            {
+                $is_spec_list[$attr_key] = 'true';
+
+                $value_price_list[$attr_key] = $attr_value[$i] . chr(9) . ''; //$key，当前
+
+                $id_list[$attr_key] = $attr_key;
+            }
+            $goods_attr_id = handle_goods_attr($goods['goods_id'], $id_list, $is_spec_list, $value_price_list);
+
+            $goods_attr = sort_goods_attr_id_array($goods_attr_id);
+            $goods_attr = implode('|', $goods_attr['sort']);
+            var_dump($goods_attr);
+//            $insert_sql = "INSERT INTO ". $ecs->table('products') ." (goods_id,goods_attr,product_shop_price,product_number) values ('{$goods['goods_id']}','{$goods_attr}','',1) ";
+//            $GLOBALS['db']->query($insert_sql);
+//            $sql = "UPDATE " . $GLOBALS['ecs']->table('products') . "
+//                        SET product_sn = '" . $goods['goods_sn'] . "g_p" . $GLOBALS['db']->insert_id() . "'
+//                        WHERE product_id = '" . $GLOBALS['db']->insert_id() . "'";
+//            $GLOBALS['db']->query($sql);
+        }
+    }
+var_dump("success");
+    exit;
+    */
     /* 是否存在商品id */
     if (empty($_GET['goods_id']))
     {
@@ -2199,7 +2281,6 @@ elseif ($_REQUEST['act'] == 'product_list')
         $_attribute[$attribute_value['attr_id']]['attr_id'] = $attribute_value['attr_id'];
         $_attribute[$attribute_value['attr_id']]['attr_name'] = $attribute_value['attr_name'];
     }
-
     $attribute_count = count($_attribute);
 
     $smarty->assign('attribute_count',          $attribute_count);
@@ -2228,14 +2309,17 @@ elseif ($_REQUEST['act'] == 'product_list')
     }
     if(empty($new_attribute))$new_attribute = $_attribute;
     $attribute_combos = [];
-    foreach ($new_attribute as $new_attribute_key => $new_attribute_item)
+    foreach ($_attribute as $new_attribute_key => $new_attribute_item)
     {
         $attribute_combos[$new_attribute_item['attr_id']] = $new_attribute_item['attr_values'];
+        $attribute_combos[$new_attribute_item['attr_id']] = array_filter($attribute_combos[$new_attribute_item['attr_id']]);
         //$attribute_combos[] = $new_attribute_item['attr_values'];
     }
 
     $attribute_combos_list = combos($attribute_combos);
 
+    $goods_attr_list = array_column($product['product'],'goods_attr');
+    $attribute_combos_list = array_diff_assoc2_deep2($attribute_combos_list,$goods_attr_list);
     $smarty->assign('attribute_combos_list',  $attribute_combos_list);
     $smarty->assign('attribute',                $new_attribute);
     $smarty->assign('ur_here',      $_LANG['18_product_list']);
@@ -2249,6 +2333,7 @@ elseif ($_REQUEST['act'] == 'product_list')
 
     /* 显示商品列表页面 */
     assign_query_info();
+
 
     $smarty->display('product_info.htm');
 }
@@ -2492,6 +2577,7 @@ elseif ($_REQUEST['act'] == 'product_add_execute')
 
             $id_list[$attr_key] = $attr_key;
         }
+
         $goods_attr_id = handle_goods_attr($product['goods_id'], $id_list, $is_spec_list, $value_price_list);
 
         /* 是否为重复规格的货品 */
