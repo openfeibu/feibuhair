@@ -89,6 +89,7 @@ if (in_array($action, $ui_arr))
 }
 $smarty->assign('lang',       $_LANG);
 $smarty->assign('navigator_list',        get_navigator());  //自定义导航栏
+$smarty->assign('all_categories',       get_categories_tree()); // 分类树
 //用户中心欢迎页
 if ($action == 'default')
 {

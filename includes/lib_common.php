@@ -2739,3 +2739,45 @@ function combos($data, &$all = array(), $group = array(), $val = null, $i = 0,$k
 
     return $all;
 }
+function array_diff_assoc2_deep($array1, $array2) {
+    $ret = array();
+    foreach ($array1 as $k => $v) {
+        if (!isset($array2[$k]))
+        {
+            $ret[$k] = $v;
+        }
+        else if (is_array($v) && is_array($array2[$k]))
+        {
+            $ret[$k] = array_diff_assoc2_deep($v, $array2[$k]);
+        }
+        else if ($v !=$array2[$k])
+        {
+            $ret[$k] = $v;
+        }
+        else
+        {
+            unset($array1[$k]);
+        }
+
+    }
+    return $ret;
+}
+function array_diff_assoc2_deep2($array1 ,$array2)
+{
+    foreach ($array1 as $key1 => $val1)
+    {
+        foreach ($array2 as $key2 => $val2)
+        {
+            $val1 = array_values($val1);
+            sort($val1);
+            $val2 = array_values($val2);
+            sort($val2);
+            if($val1 == $val2)
+            {
+                unset($array1[$key1]);
+                continue;
+            }
+        }
+    }
+    return $array1;
+}
