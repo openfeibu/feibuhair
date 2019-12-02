@@ -1020,13 +1020,14 @@ function get_goods_specifications_list($goods_id)
     {
         return array();  //$goods_id不能为空
     }
-
+    $goods = $GLOBALS['db']->getRow("SELECT goods_type from ".$GLOBALS['ecs']->table('goods')." where goods_id = '".$goods_id."'");
     $sql = "SELECT g.goods_attr_id, g.attr_value, g.attr_id, a.attr_name
             FROM " . $GLOBALS['ecs']->table('goods_attr') . " AS g
                 LEFT JOIN " . $GLOBALS['ecs']->table('attribute') . " AS a
                     ON a.attr_id = g.attr_id
             WHERE goods_id = '$goods_id'
             AND a.attr_type = 1
+            AND cat_id = ".$goods['goods_type']."
             ORDER BY g.attr_id ASC";
     $results = $GLOBALS['db']->getAll($sql);
 
