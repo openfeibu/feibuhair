@@ -1,10 +1,7 @@
 <nav class="noo-main-menu">
     <ul class="nav-collapse navbar-nav">
 
-        <li class="menu-item-has-children">
-            <a href="../index.php">Home</a>
-
-        </li>
+        <li ><a href="../index.php">Home</a></li>
         <!--{foreach from=$all_categories item=cat}-->
         <li class="menu-item-has-children">
             <a href="{$cat.url}">{$cat.name|escape:html}</a>
@@ -17,7 +14,7 @@
             <!-- {/if} -->
         </li>
         <!-- {/foreach} -->
-        <li><a href="article_cat.php?id=4">News</a></li>
+        <!-- <li><a href="article_cat.php?id=4">News</a></li>-->
         <li><a href="user.php?act=message_list">Contact</a></li>
     </ul>
 </nav>

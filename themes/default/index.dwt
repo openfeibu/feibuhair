@@ -21,7 +21,7 @@
                 <div class="swiper-banner-next hidden-xs"></div><!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
             </div>
             <!-- <div class="container-fluid">
-                <div class="row">
+                <div class="linerow">
                     <div class="col-sm-12 p-0">
                         <div id="rev_slider" class="rev_slider " style="height: auto !important;">
                             <ul>
@@ -37,9 +37,9 @@
                 </div>
             </div> -->
         </div>
-        <div class="section pt-3 w1200">
-            <div class="container-fluid">
-                <div class="row">
+        <div class="section pt-3 " style="background:#fff;">
+            <div class="container-fluid w1300">
+                <div class="linerow">
                     <div class="features">
                         <!--{foreach from=$categories item=cat}-->
                         <div class="type-item col-md-2 col-sm-3 mb-1 col-xs-3">
@@ -55,60 +55,53 @@
                 </div>
             </div>
         </div>
-        <div class="section pt-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="noo-section-title">
-                            <h3><span>Featured Products</span></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section pb-9">
+
+        <div class="section pb-9 w1300">
             <div class="container-fluid">
-                <div class="row">
+                <div class="linerow">
                     {foreach from=$categories_goods item=categories_goods_item key=categories_goods_key name=categories_goods_name}
-                    <div class="col-sm-12">
-                        <div><a href="{$categories_goods_item.url}">{$categories_goods_item.name}</a></div>
-                    </div>
-                    {foreach from=$categories_goods_item.goods item=goods_item key=goods_key name=goods_name}
-                        <div class="noo-product-item col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                            <div class="noo-product-inner">
-                                <a href="{$goods_item.url}">
-                                    <div class="noo-product-thumbnail">
-                                        <img src="{$goods_item.goods_img}" alt="{$goods_item.name}" />
-                                    </div>
-                                    <h3>{$goods_item.name}</h3>
-                                    <div class="price">
-                                        {if $user_info}
-                                            <del>{$goods_item.market_price}</del>
-                                            <ins> <!--{if $goods_item.promote_price neq "" } -->{$goods_item.promote_price}<!--{else}-->
-                                                {$goods_item.shop_price}<!--{/if}--></ins>
-                                        {else}
-                                            <a href="user.php">please login</a>
-                                        {/if}
-                                    </div>
-                                    <div class="noo-loop-cart">
-                                        <span class="button add-to-cart"></span>
-                                    </div>
-                                </a>
+                     <div class="linerow">
+                        <div class="col-sm-12">
+                         <div class="noo-section-title">
+                                <h3><span>{$categories_goods_item.name}</span><a class="more" href="{$categories_goods_item.url}">See all</a></h3>
+                                
                             </div>
+                          
                         </div>
-                    {/foreach}
-
+                        {foreach from=$categories_goods_item.goods item=goods_item key=goods_key name=goods_name}
+                            <div class="noo-product-item col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                <div class="noo-product-inner">
+                                    <a href="{$goods_item.url}">
+                                        <div class="noo-product-thumbnail">
+                                            <img src="{$goods_item.goods_img}" alt="{$goods_item.name}" />
+                                        </div>
+                                        <h3>{$goods_item.name}</h3>
+                                        <div class="price">
+                                            {if $user_info}
+                                                <del>{$goods_item.market_price}</del>
+                                                <ins> <!--{if $goods_item.promote_price neq "" } -->{$goods_item.promote_price}<!--{else}-->
+                                                    {$goods_item.shop_price}<!--{/if}--></ins>
+                                            {else}
+                                                <a href="user.php" style="color:#ff1b66;font-weight:500">$(login)</a>
+                                            {/if}
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                            </div>
+                        {/foreach}
+                    </div>
                     {/foreach}
                 </div>
             </div>
         </div>
 
-        <div class="section section-testimonial pt-8 pb-8">
+        <div class="section section-testimonial pt-5 pb-5">
             <div class="section pb-4">
                 <div class="container">
-                    <div class="row">
+                    <div class="linerow">
                         <div class="col-sm-12">
-                            <div class="noo-section-title">
+                            <div class="noo-section-title" style="text-align:center">
                                 <h3><span style="color: #fff;">Sale Team</span></h3>
                                 <!-- <p>hottest products of month</p> -->
                             </div>
@@ -117,9 +110,9 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="linerow">
                     <div class="white">
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
                             <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
@@ -129,13 +122,13 @@
                                 <p>Instagram:feibuhair_wholesale</p>
                                 <p>email:erin@feibu.info</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8615627646093" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a target="_blank" href="https://www.instagram.com/feibuhair_wholesale/" class="col-sm-4 col-xs-2 "><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="mailto:erin@feibu.info"  class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8615627646093" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_wholesale/" class="col-sm-4 col-xs-4 "><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:erin@feibu.info"  class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
                             <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
@@ -143,15 +136,15 @@
 												</span>
                                 <p>whatApp:+8618026405484</p>
                                 <p>Instagram:feibuhair__zoey</p>
-                                <p>email:595642191@qq.com</p>
+                                <p>email:zoey@feibuhair.com</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618026405484" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a target="_blank" href="https://www.instagram.com/feibuhair__zoey/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="mailto:zoey@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618026405484" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair__zoey/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:zoey@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
                             <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
@@ -161,13 +154,13 @@
                                 <p>Instagram:feibuhair_eve</p>
                                 <p>email:eve@feibuhair.com</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8613660012185" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a target="_blank" href="https://www.instagram.com/feibuhair_eve/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="mailto:eve@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8613660012185" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_eve/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:eve@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12 text-center sale-item" style="padding:10px 0;">
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
                             <img src="themes/default/images/avatar/nanren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
                             <div class="noo-testimonial-content">
 												<span class="testimonial-author">
@@ -177,9 +170,9 @@
                                 <p>Instagram:feibuhair_jester</p>
                                 <p>email:sales06@feibuhair.com</p>
                                 <div class="tell-button text-center" style="padding:0 10%;">
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618027206535" class="col-sm-4 col-xs-2 col-xs-offset-3 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
-                                    <a target="_blank" href="https://www.instagram.com/feibuhair_jester/" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
-                                    <a href="mailto:sales06@feibuhair.com" class="col-sm-4 col-xs-2"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618027206535" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_jester/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:sales06@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -193,12 +186,13 @@
 
         <div class="section pt-5 pb-5">
             <div class="container">
-                <div class="row">
+                <div class="linerow">
                     <div class="col-sm-12">
-                        <div class="noo-section-title mb-7">
-                            <h3><span>FeibuHair News</span></h3>
-                            <p>Lastest News of Week</p>
-                        </div>
+                       
+                        <div class="noo-section-title mb-3">
+                                <h3><span>FeibuHair News</span><a class="more" href="article_cat.php?id=4">See all</a></h3>
+                                
+                            </div>
                         <div class="noo-blog">
                             {foreach from=$new_cat_4_articles item=article key=article_key name=article_name}
                                 <!--{if $smarty.foreach.article_name.first}-->
@@ -232,7 +226,7 @@
         </div>
         <div class="section pt-5 pb-10 bg-white">
             <div class="container">
-                <div class="row">
+                <div class="linerow">
                     <div class="col-sm-4">
                         <div class="noo-services text-center pt-5">
                             <div class="noo-service-icon">
@@ -274,7 +268,7 @@
         </div>
         <div class="section section-simplenews">
             <div class="container">
-                <div class="row">
+                <div class="linerow">
                     <div class="col-sm-12">
                         <div class="noo-simplenews style-2 text-center">
                             <h3 class="noo-mail-title white">FeibuHair You're worth it.</h3>

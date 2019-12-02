@@ -48,7 +48,7 @@
         $('<i class="fa fa-caret-down noo-sub-icon"></i>').appendTo('.noo-main-canvas ul .menu-item-has-children');
         $('.noo-sub-icon').click(function() {
             var $this = $(this);
-            var $sub_menu = $this.prev();
+            var $sub_menu = $this.prev('ul');
             var $parent = $this.parent().parent();
             if ($sub_menu.hasClass('show-sub')) {
                 $this.removeClass('fa-caret-up').addClass('fa-caret-down');

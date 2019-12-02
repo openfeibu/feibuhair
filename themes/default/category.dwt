@@ -7,18 +7,13 @@
     <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
     <div id="main">
         <div class="section mb-10" id="goods_list">
-            <div class="container shopList">
+            <div class="w1300 shopList">
                 <div class="noo-container-catalog">
                     <div class="noo-catalog">
                         <p class="commerce-result-count hidden-xs hidden-sm">Showing all {$pager.record_count} results</p>
 
                         <div class="commerce-catalog pull-left">
-                            <select class="orderby pull-left"  onchange="js_href(this);">
-                                {*<option value="" selected="selected">Default sorting</option>*}
-                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=DESC#goods_list" <!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} --> selected <!-- {/if} --> >Sort by newness</option>
-                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=ASC#goods_list" <!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} --> selected <!-- {/if} --> >Sort by price: low to high</option>
-                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=DESC#goods_list" <!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} --> selected <!-- {/if} --> >Sort by price: high to low</option>
-                            </select>
+                     
                             <!--{foreach from=$filter_attr_list item=filter_attr}-->
                             {$filter_attr.filter_attr_name|escape:html}:
                             <select class="noo-woo-filter" onchange="js_href(this);">
@@ -35,36 +30,6 @@
                     </div>
                 </div>
                 <div class="row" >
-                    <div class="col-md-9">
-                        <div class="noo-product-grid">
-                            <!--{foreach name=goods_list from=$goods_list item=goods}-->
-                            <div class="noo-product-item col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                                <div class="noo-product-inner">
-                                    <a href="{$goods.url}">
-                                        <div class="noo-product-thumbnail">
-                                            <img src="{$goods.goods_img}" alt="{$goods.goods_name}" />
-                                        </div>
-                                        <h3>{$goods.name}</h3>
-                                        <div class="price">
-                                            {if $user_info}
-                                            <del>{$goods.market_price}</del>
-                                            <ins> <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->
-                                              {$goods.shop_price}<!--{/if}--></ins>
-                                            {else}
-                                                <a href="user.php">please login</a>
-                                            {/if}
-                                        </div>
-                                        <div class="noo-loop-cart">
-                                            <span class="button add-to-cart"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!--{/foreach}-->
-                        </div>
-                        <!-- #BeginLibraryItem "/library/pages.lbi" --> <!-- #EndLibraryItem -->
-
-                    </div>
                     <div class="col-md-3" style="float: left;">
                         <div class="noo-sidebar-wrap">
                             <div class="widget widget_search">
@@ -118,6 +83,37 @@
                             -->
                         </div>
                     </div>
+                    <div class="col-md-9">
+                        <div class="noo-product-grid">
+                            <!--{foreach name=goods_list from=$goods_list item=goods}-->
+                            <div class="noo-product-item col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <div class="noo-product-inner">
+                                    <a href="{$goods.url}">
+                                        <div class="noo-product-thumbnail">
+                                            <img src="{$goods.goods_img}" alt="{$goods.goods_name}" />
+                                        </div>
+                                        <h3>{$goods.name}</h3>
+                                        <div class="price">
+                                            {if $user_info}
+                                            <del>{$goods.market_price}</del>
+                                            <ins> <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->
+                                              {$goods.shop_price}<!--{/if}--></ins>
+                                            {else}
+                                                <a href="user.php">please login</a>
+                                            {/if}
+                                        </div>
+                                        <div class="noo-loop-cart">
+                                            <span class="button add-to-cart"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--{/foreach}-->
+                        </div>
+                        <!-- #BeginLibraryItem "/library/pages.lbi" --> <!-- #EndLibraryItem -->
+
+                    </div>
+                    
                 </div>
             </div>
         </div>
