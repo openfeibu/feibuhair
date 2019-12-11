@@ -640,6 +640,21 @@ function get_goods_properties($goods_id)
             $arr['lnk'][$row['attr_id']]['value'] = $row['attr_value'];
         }
     }
+    foreach ($arr['spe'] as $key => $spe)
+    {
+        $values = $spe['values'];
+        if($spe['name']=='Inches')
+        {
+            foreach ($spe['values'] as $k=>$v)
+            {
+
+                $attr_value[$k] = intval(rtrim($v['label'])) ;
+            }
+
+            array_multisort($attr_value, $values);
+            $arr['spe'][$key]['values'] = $values;
+        }
+    }
 
     return $arr;
 }
