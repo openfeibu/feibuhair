@@ -5,13 +5,14 @@
     <meta name="author" content="feibuhair" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="shortcut icon" href="favicon.ico"/>
-    <title>FeibuHair | bundles, lace, bod wigs, hair clips, lashes products</title>
-    <meta name="description" content="Feibuhair in China sells wigs products, bundles, lace, bod wigs, hair clips, lashes products and anything else.provide100% premium quality human virgin hair more than 15years, shipped over than 90coutries in the world.">
+    <title>FeibuHair | hair shop , bundles, lace, bod wigs, hair clips, lashes products</title>
+    <meta name="description" content="Feibuhair in China sells wigs products, bundles, lace, bod wigs, hair clips, lashes products and anything else.provide 100% premium quality human virgin hair more than 15 years, shipped over than 90coutries in the world.">
+    <meta name="keywords" content="hair shop,buy hair,virgin hair bundles,preferential hair, FeibuHair virgin hair, lace closures,bundles hair, lace, bod wigs, hair clips, lashes products,china hair">
     <link rel="stylesheet" href="themes/default/css/bootstrap.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="themes/default/css/settings.css" type="text/css" media="all"/>
+    <!-- <link rel="stylesheet" href="themes/default/css/settings.css" type="text/css" media="all"/> -->
     <link rel="stylesheet" href="themes/default/css/prettyPhoto.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="themes/default/css/magnific-popup.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="themes/default/css/font-awesome.min.css" type="text/css" media="all" />
+<!--     <link rel="stylesheet" href="themes/default/css/magnific-popup.css" type="text/css" media="all" />--> 
+   <link rel="stylesheet" href="themes/default/css/font-awesome.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="themes/default/css/elegantIcon.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="themes/default/css/owl.carousel.css" type="text/css" media="all" />
     <link rel="stylesheet" href="themes/default/css/owl.theme.css" type="text/css" media="all" />

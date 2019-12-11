@@ -1,7 +1,7 @@
 <footer class="wrap-footer">
     <div class="footer-top pb-5">
         <div class="container">
-            <div class="row">
+            <div class="linerow">
                 <div class="col-md-4 col-sm-6 footer-item">
                     <div class="widget widget-noo-infomation">
                         <h4 class="widget-title">feibuhair</h4>
@@ -67,8 +67,8 @@
     </div>
     <div class="footer-bottom pb-5 text-center">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
+            <div class="linerow">
+                <div class="">
                     <a href="#"><img src="themes/default/images/payment_logo.png" alt="" /></a>
                     <p>本网站由 feibukejiyouxiangongsi 和 zhijie wu 拥有和运营</p>
 
