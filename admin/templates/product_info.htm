@@ -42,7 +42,6 @@
       <!--<td><input type="button" class="button" value=" - " onclick="listTable.remove({$product.product_id}, '{$lang.trash_product_confirm}', 'product_remove')"/></td>-->
     </tr>
     {/foreach}
-    {if !$product_list}
     {foreach from=$attribute_combos_list item=attribute_combos_item key=attribute_combos_key}
     <tr id="attr_row">
       {foreach from=$attribute_combos_item item=value key=key}
@@ -58,8 +57,6 @@
       <!--<td><input type="button" class="button" value=" + " onclick="javascript:add_attr_product();"/></td>-->
     </tr>
     {/foreach}
-    {/if}
-
     <tr>
       <td align="center" colspan="{$attribute_count_3}">
         <input type="button" class="button" value="{$lang.button_save}" onclick="checkgood_sn()" />
