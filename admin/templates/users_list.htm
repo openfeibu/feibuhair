@@ -32,6 +32,7 @@
     <th>{$lang.rank_points}</th>
     <th>{$lang.pay_points}</th>
     <th><a href="javascript:listTable.sort('reg_time'); ">{$lang.reg_date}</a>{$sort_reg_time}</th>
+    <th>上次登录</th>
     <th>{$lang.handler}</th>
   <tr>
   {foreach from=$user_list item=user}
@@ -45,6 +46,7 @@
     <td>{$user.rank_points}</td>
     <td>{$user.pay_points}</td>
     <td align="center">{$user.reg_time}</td>
+  <td align="center">{$user.last_login}</td>
     <td align="center">
       <a href="users.php?act=edit&id={$user.user_id}" title="{$lang.edit}">{$lang.edit}</a>
       <a href="users.php?act=address_list&id={$user.user_id}" title="{$lang.address_list}">{$lang.address_list}</a>
