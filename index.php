@@ -166,6 +166,7 @@ $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
         $smarty->assign('cat_rec', $cat_rec);
     }
     $smarty->assign('ads', ads(1));
+    $smarty->assign('ads_small', ads(2));
     /* 页面中的动态内容 */
     assign_dynamic('index');
 
@@ -197,7 +198,25 @@ $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
     }
     var_dump("success");
     exit;
-    */
+
+    $sql = "SELECT g.goods_id,p.goods_attr,p.product_id FROM ". $GLOBALS['ecs']->table('goods') . ' as g left join '. $GLOBALS['ecs']->table('products').' as p on g.goods_id =p.goods_id WHERE  g.cat_id IN (17,18) order by g.goods_id desc';
+    $res = $GLOBALS['db']->getAll($sql);
+foreach ($res AS $idx => $row)
+{
+    $goods_attrs = explode('|',$row['goods_attr']);
+
+    if(count($goods_attrs) == 3)
+    {
+        unset($goods_attrs[2]);
+        $new_goods_attr = implode('|',$goods_attrs);
+
+        $GLOBALS['db']->query('UPDATE ' . $ecs->table('products') . " SET goods_attr =  '".$new_goods_attr."' where product_id = ".$row['product_id']);
+    }
+}
+    var_dump($res);exit;
+*/
+
+
 //}
 
 
