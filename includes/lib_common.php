@@ -1996,7 +1996,7 @@ function get_final_price($goods_id, $goods_num = '1', $is_spec_price = false, $s
     } else {
         $final_price = $user_price;
     }
-    $spec = array_filter($spec);
+    //$spec = array_filter($spec);
     //如果需要加入规格价格
     if ($is_spec_price) {
         if (!empty($spec)) {
