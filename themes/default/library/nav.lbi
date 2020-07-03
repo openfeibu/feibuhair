@@ -1,4 +1,4 @@
-<nav class="noo-main-menu">
+<nav class="noo-main-menu wow fadeInUp">
     <ul class="nav-collapse navbar-nav">
 
         <li ><a href="../index.php">Home</a></li>
@@ -6,15 +6,14 @@
         <li class="menu-item-has-children">
             <a href="{$cat.url}">{$cat.name|escape:html}</a>
             <!--{if $cat.cat_id }-->
-            <ul class="sub-menu">
+            <ol class="sub-menu">
                 <!--{foreach from=$cat.cat_id item=child}-->
                 <li><a href="{$child.url}">{$child.name|escape:html}</a></li>
                 <!-- {/foreach} -->
-            </ul>
+            </ol>
             <!-- {/if} -->
         </li>
         <!-- {/foreach} -->
-        <!-- <li><a href="article_cat.php?id=4">News</a></li>-->
         <li><a href="user.php?act=message_list">Contact</a></li>
     </ul>
 </nav>

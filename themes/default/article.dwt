@@ -1,12 +1,9 @@
 <!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
 <body>
-<div class="noo-spinner">
-    <div class="sk-rotating-plane"></div>
-</div>
 <div class="site">
-    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-    <div id="main">
-        <div class="section mt-10 mb-10">
+    <!-- #BeginLibraryItem "/library/index_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="main" style="background:#fafafa;">
+        <div class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -14,15 +11,11 @@
                             <div class="entry-header">
                                 <h1>{$article.title|escape:html} </h1>
                             </div>
-                            <div class="content-featured">
-                                <div class="content-thumb">
-                                   <img src="http://www.feibuhair.com/themes/default/images/part4.jpg" alt="" /> 
-                                </div>
-                            </div>
+                            
                             <div class="entry-content">
                               {$article.content}
                               <div class="article-footer">
-                              <a href="http://www.feibuhair.com" alt="feibuhair" title="feibuhair">Feibuhair </a> in China sells <a href="http://www.feibuhair.com/category.php?id=7" alt="wigs" title="wigs">wigs</a> products, <a href="http://www.feibuhair.com/category.php?id=5" alt="bundles" title="bundles">bundles</a>, <a href="http://www.feibuhair.com/category.php?id=6" alt="lace" title="lace">lace</a>, <a href="http://www.feibuhair.com/category.php?id=7" alt="bod wigs" title="bod wigs">bod wigs</a>, <a href="http://www.feibuhair.com/category.php?id=15" alt="hair clips" title="hair clips">hair clips</a>, <a href="http://www.feibuhair.com/category.php?id=16" alt="lashes" title="lashes">lashes</a> products and anything else.provide 100% premium quality human virgin hair more than 15 years, shipped over than 90 coutries in the world.</div>
+                              <a href="http://www.feibuhair.com" alt="feibuhair" title="feibuhair">Feibuhair </a> in China sells <a href="http://www.feibuhair.com/category.php?id=7" alt="wigs" title="wigs">wigs</a> products, <a href="http://www.feibuhair.com/category.php?id=5" alt="bundles" title="bundles">bundles</a>, <a href="http://www.feibuhair.com/category.php?id=6" alt="lace" title="lace">lace</a>, <a href="http://www.feibuhair.com/category.php?id=7" alt="bod wigs" title="bob wigs">bob wigs</a>, <a href="http://www.feibuhair.com/category.php?id=15" alt="hair clips" title="hair clips">hair clips</a>, <a href="http://www.feibuhair.com/category.php?id=16" alt="lashes" title="lashes">lashes</a> products and anything else.provide 100% premium quality human virgin hair more than 15 years, shipped over than 90 coutries in the world.</div>
                             </div>
                             <div class="entry-footer">
 										<span class="tags-links">

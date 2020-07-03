@@ -1,14 +1,16 @@
 <!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
 {if $auto_redirect}
-    <meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+  <me2ta http-equiv="refresh" content="3;URL={$message.back_url}" /> 
 {/if}
 <body>
-<div class="noo-spinner">
-    <div class="sk-rotating-plane"></div>
-</div>
+<style>
+.noo-page-heading.shop-heading{display:none;}
+
+</style>
+
 <div class="site">
-    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-    <div id="main">
+    <!-- #BeginLibraryItem "/library/index_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="main" style="background:#fafafa;">
         <div class="section" id="error-404">
             <div class="container">
                 <div class="row">
@@ -17,7 +19,7 @@
                             <p >{$message.content}</p>
                             <!-- {if $message.url_info} -->
                             <!--{foreach from=$message.url_info key=info item=url}-->
-                            <p><a href="{$url}">{$info}</a></p>
+                            <a href="{$url}">{	$info}</a>
                             <!--{/foreach}-->
                             <!--{/if}-->
                         </div>

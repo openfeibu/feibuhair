@@ -1,60 +1,41 @@
 <!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
 <body>
-<!--<div class="noo-spinner">
+<div class="noo-spinner">
     <div class="sk-rotating-plane"></div>
-</div>-->
-<div class=" shop-heading">     
-		<img src="/themes/default/images/all.jpg" alt="{$goods.goods_name}" />
 </div>
 <div class="site">
-    <!-- #BeginLibraryItem "/library/index_header.lbi" --><!-- #EndLibraryItem -->
-    <div id="main" style="padding:0;background:#fafafa">
+    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="main">
         <div class="section mb-10" id="goods_list">
-            <div class="w1300 shopList">
+            <div class="container shopList">
                 <div class="noo-container-catalog">
                     <div class="noo-catalog">
                         <p class="commerce-result-count hidden-xs hidden-sm">Showing all {$pager.record_count} results</p>
 
                         <div class="commerce-catalog pull-left">
-                            
+                            <select class="orderby pull-left"  onchange="js_href(this);">
+                                {*<option value="" selected="selected">Default sorting</option>*}
+                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=DESC#goods_list" <!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} --> selected <!-- {/if} --> >Sort by newness</option>
+                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=ASC#goods_list" <!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} --> selected <!-- {/if} --> >Sort by price: low to high</option>
+                                <option value="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=DESC#goods_list" <!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} --> selected <!-- {/if} --> >Sort by price: high to low</option>
+                            </select>
                             <!--{foreach from=$filter_attr_list item=filter_attr}-->
-                            <div class="filter-selectBox pull-left  ">
-                                {$filter_attr.filter_attr_name|escape:html}:
-
-                                <select class="noo-woo-filter" onchange="js_href(this);">
-                                    <!--{foreach from=$filter_attr.attr_list item=attr}-->
-                                    {if $attr.attr_value}
-                                    <option value="{$attr.url}" <!-- {if $attr.selected} --> selected <!-- {/if} --> >{$attr.attr_value}</option>
-                                    {/if}
-                                    <!--{/foreach}-->
-
-                                </select>
-                             </div>
+                            {$filter_attr.filter_attr_name|escape:html}:
+                            <select class="noo-woo-filter" onchange="js_href(this);">
+                                <!--{foreach from=$filter_attr.attr_list item=attr}-->
+                                <option value="{$attr.url}" <!-- {if $attr.selected} --> selected <!-- {/if} --> >{$attr.attr_value}</option>
+                                <!--{/foreach}-->
+                            </select>
                             <!--{/foreach}-->
                         </div>
-                        
-                        <div class=" widget_search pull-left">
-                            
-                            <form action="{$script_name}.php" onSubmit="return checkSearchForm()" method="get">
-                                <input type="hidden" name="id" value="{$category}">
-                                <input type="text"  name="keywords" id="keyword"  class="form-control" value="{$search_keywords|escape}" placeholder="Enter keyword to search..." style="margin-bottom:0"/>
-                                <button type="submit" class="noo-search-submit"><i class="icon_search"></i></button>
-                            </form>
-                        </div>
-                     
+
                     </div>
                 </div>
-                <div class="linerow" >
-               
-                    <div class="shop-list-right" >
+                <div class="row" >
+                    <div class="col-md-9">
                         <div class="noo-product-grid">
-						<!--{if empty($goods_list)}-->
-							<div class="noData">
-								<p>Sorry, the product is being uploaded!</p>
-							</div>
-						<!--{/if}-->
                             <!--{foreach name=goods_list from=$goods_list item=goods}-->
-                            <div class="noo-product-item pro-item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="noo-product-item col-lg-4 col-md-4 col-sm-4 col-xs-6">
                                 <div class="noo-product-inner">
                                     <a href="{$goods.url}">
                                         <div class="noo-product-thumbnail">
@@ -67,12 +48,12 @@
                                             <ins> <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->
                                               {$goods.shop_price}<!--{/if}--></ins>
                                             {else}
-                                               <a href="user.php" style="color:#ff1b66;font-weight:500">$(login)</a>
+                                                <a href="user.php">please login</a>
                                             {/if}
                                         </div>
-                                       <!--  <div class="noo-loop-cart">
+                                        <div class="noo-loop-cart">
                                             <span class="button add-to-cart"></span>
-                                        </div> -->
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -81,25 +62,31 @@
                         <!-- #BeginLibraryItem "/library/pages.lbi" --> <!-- #EndLibraryItem -->
 
                     </div>
-                     <div  class="shop-list-left">
+                    <div class="col-md-3" style="float: left;">
                         <div class="noo-sidebar-wrap">
-                            
+                            <div class="widget widget_search">
+                                <h4 class="widget-title">Search</h4>
+                                <form action="{$script_name}.php" onSubmit="return checkSearchForm()" method="get">
+                                    <input type="hidden" name="id" value="{$category}">
+                                    <input type="text"  name="keywords" id="keyword"  class="form-control" value="{$search_keywords|escape}" placeholder="Enter keyword to search..." />
+                                    <button type="submit" class="noo-search-submit"><i class="icon_search"></i></button>
+                                </form>
+                            </div>
                             {if count($child_categories)}
                             <div class="widget widget_categories">
                                 <h4 class="widget-title">Categories</h4>
                                 <ul>
                                     <!--{foreach name=child_categories from=$child_categories item=child_category_item}-->
-                                    <li ><a href="{$child_category_item.url}">{$child_category_item.name}</a></li>
+                                    <li><a href="{$child_category_item.url}">{$child_category_item.name}</a></li>
                                     <!--{/foreach}-->
                                 </ul>
                             </div>
-                             {/if}
-                            {if count($categories)}
+                            {elseif count($categories)}
                             <div class="widget widget_categories">
-                                <h4 class="widget-title">Product</h4>
+                                <h4 class="widget-title">Categories</h4>
                                 <ul>
                                     <!--{foreach name=categories from=$categories item=category_item}-->
-                                    <li ><a href="{$category_item.url}">{$category_item.name}</a></li>
+                                    <li><a href="{$category_item.url}">{$category_item.name}</a></li>
                                     <!--{/foreach}-->
                                 </ul>
                             </div>

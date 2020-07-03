@@ -3,8 +3,11 @@
 <body>
 
 <div class="site">
-    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-    <div id="main">
+    <!-- #BeginLibraryItem "/library/index_header.lbi" --><!-- #EndLibraryItem -->
+	<div class=" shop-heading">     
+			<img src="/themes/default/images/all.jpg" alt="{$goods.goods_name}" />
+	</div>
+    <div id="main" style="background:#fafafa;">
         <div class="section mtn-10">
             <div class="container">
                 <!-- {if $action eq 'message_list'} -->
@@ -52,7 +55,7 @@
                 <!--{/if}-->
             </div>
         </div>
-        <div class="section pt-3 pb-10">
+        <div class="section pt-3 pb-3">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -83,6 +86,80 @@
             </div>
         </div>
     </div>
+	<div class="container">
+                <div class="linerow">
+                    <div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nanren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>feibuhair_service</strong>
+												</span>
+                                <p>whatsApp:+86 18820785637</p>
+                                <p>Instagram:feibuhair_service</p>
+                                <p>email:service@feibu.info</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618820785637" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair_service/" class="col-sm-4 col-xs-4 "><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:service@feibu.info"  class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>shan.shan888</strong>
+												</span>
+                                <p>whatsApp:+86 15119773632</p>
+                                <p>Instagram:feibuhair.ivette</p>
+                                <p>email:shanshan@feibuhair.com</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8615119773632" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/shan.shan888/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:shanshan@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>feibuhairsilvia</strong>
+												</span>
+                                <p>whatsApp:+86 18027206535</p>
+                                <p>Instagram:feibuhairsilvia</p>
+                                <p>email:wendy@feibuhair.com</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618027206535" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhairsilvia/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:wendy@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-center sale-item" style="padding:10px 0;">
+                            <img src="themes/default/images/avatar/nvren.png" alt="" style="background: #fff;border-radius: 50%;max-width: 100px;padding:10px;margin-bottom:20px;"/>
+                            <div class="noo-testimonial-content">
+												<span class="testimonial-author">
+													<strong>feibuhair.beautyCici</strong>
+												</span>
+                                <p>whatsApp:+86 13794420683</p>
+                                <p>Instagram:feibuhair.beautyCici</p>
+                                <p>email:feibuhairlivia@feibuhair.com</p>
+                                <div class="tell-button text-center" style="padding:0 10%;">
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=8618820785637" class="col-sm-4 col-xs-4 col-xs-offset-0 col-sm-offset-0"><img width="100%" src="themes/default/images/whatapp.png" alt="" /></a>
+                                    <a target="_blank" href="https://www.instagram.com/feibuhair.beautyCici/" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/ins.png" alt="" /></a>
+                                    <a href="mailto:feibuhairlivia@feibuhair.com" class="col-sm-4 col-xs-4"><img width="100%" src="themes/default/images/email.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
     <!-- #BeginLibraryItem "/library/footer.lbi" --><!-- #EndLibraryItem -->
 </div>
 <script type="text/javascript">

@@ -1,10 +1,10 @@
-<header class="noo-header header-1 header-transparent index-nav wow fadeInUp">
+<header class="noo-header header-1 header-transparent index-nav">
   <div class="navbar-wrapper">
     <div class="navbar navbar-default">
-      <div class="w1200">
-        <div class="navbar-logo" >
+      <div class="container-fluid">
+        <div class="navbar-logo">
           <a href="./" class="custom-logo-link">
-            <img src="themes/default/images/logo.png" alt="Logo" class="wow rubberBand" data-wow-delay="0.5s"/>
+            <img src="themes/default/images/logo.png" alt="Logo"/>
           </a>
           <button data-target=".nav-collapse" class="btn-navbar noo_icon_menu icon_menu"></button>
         </div>

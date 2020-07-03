@@ -1,35 +1,52 @@
 <div class="navbar-meta">
      <ul>
         {if $user_info}
-            <li><a class="login" href="javascript:;">{$user_info.username}</a></li>
+            <li class="name">
+				<p>{$user_info.username}</p>
+					<div class="ac-gn-bagview-nav-list ">
+						<div class="ac-gn-bagview-nav-item ac-gn-bagview-nav-item-signOut">
+							<a href="user.php?act=logout">
+								Logout {$user_info.username}
+							</a>
+						</div>
+					</div>
+			</li>
             <!--
-        <li>
-            <a class="noo-wishlist icon_heart_alt" href="wishlist.html"></a>
-        </li>
-        <li class="noo-menu-item-cart minicart">
-            <a class="cart-button" href="#">
-            <span class="cart-item">
-                <i class="icon_bag_alt"></i>
-                <span class="cart-count">0</span>
-                <span class="cart-name-and-total">
-                     Cart(0)
-                </span>
-            </span>
-            </a>
-            <div class="noo-minicart">
-                <div class="minicart-header">Your shopping bag is empty.</div>
-                <div class="minicart-footer">
-                 <div class="minicart-actions clearfix">
-                    <a class="button pull-left" href="shop.html">
-                     <span class="text">Go to the shop</span>
-                    </a>
-                 </div>
-                </div>
-            </div>
-        </li>
+				<li>
+					<a class="noo-wishlist icon_heart_alt" href="wishlist.html"></a>
+				</li>
+				<li class="noo-menu-item-cart minicart">
+					<a class="cart-button" href="#">
+					<span class="cart-item">
+						<i class="icon_bag_alt"></i>
+						<span class="cart-count">0</span>
+						<span class="cart-name-and-total">
+							 Cart(0)
+						</span>
+					</span>
+					</a>
+					<div class="noo-minicart">
+						<div class="minicart-header">Your shopping bag is empty.</div>
+						<div class="minicart-footer">
+						 <div class="minicart-actions clearfix">
+							<a class="button pull-left" href="shop.html">
+							 <span class="text">Go to the shop</span>
+							</a>
+						 </div>
+						</div>
+					</div>
+				</li>
         -->
     {else}
      <li><a class="login" href="user.php">Login</a></li>
     {/if}
     </ul>
 </div>
+<script>
+	$(".navbar-meta .name").hover(function(){
+		$(".ac-gn-bagview-nav-list").fadeIn(100)
+		
+	},function(){
+	$(".ac-gn-bagview-nav-list").fadeOut(100)
+	})
+</script>

@@ -63,16 +63,9 @@ jQuery(document).ready(function($) {
 	});
 
 	//header 2 set default height
-	if ($(".header-2").length > 0) {
-		var h = $(".header-2").outerHeight();
-		$("#main").css('margin-top', h);
-	}
-	if ($(".header-3").length > 0) {
-		var h = $(".header-3").outerHeight();
-		$("#main").css('margin-top', h);
-	}
 
-	$(window).scroll(function() {
+
+/* 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
 			$(".header-transparent").addClass("on");
 		} else {
@@ -90,7 +83,7 @@ jQuery(document).ready(function($) {
 			$(".go-to-top").removeClass("on");
 			$(".header-transparent,.header-2,.header-3").removeClass("on-fixed");
 		}
-	});
+	}); */
 
 	$('body').on('click', '.go-to-top', function() {
 		$("html, body").animate({
