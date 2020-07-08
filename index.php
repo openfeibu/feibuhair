@@ -140,7 +140,7 @@ $cache_id = sprintf('%X', crc32($_SESSION['user_rank'] . '-' . $_CFG['lang']));
     $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告
     $salesman_article = get_article_info(101);
 
-    $smarty->assign('salesman_article',     $salesman_article);       // 商店公告
+    $smarty->assign('salesman_article',     $salesman_article);       // 业务员信息
     /* 首页主广告设置 */
     $smarty->assign('index_ad',     $_CFG['index_ad']);
     if ($_CFG['index_ad'] == 'cus')

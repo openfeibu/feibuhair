@@ -1237,6 +1237,10 @@ elseif ($action == 'message_list')
 
     $pager = get_pager('user.php', $act, $record_count, $page, 5);
 
+    $salesman_article = get_article_info(101);
+
+    $smarty->assign('salesman_article',     $salesman_article);       // 业务员信息
+    
     $smarty->assign('message_list', get_message_list($user_id, $_SESSION['user_name'], $pager['size'], $pager['start'], $order_id));
     $smarty->assign('pager',        $pager);
     $smarty->assign('order_info',   $order_info);
