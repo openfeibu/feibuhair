@@ -208,8 +208,11 @@ $(function(){
   {
     var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
     var qty = 1;
-    if(attr)
-    Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+    if(attr.length != 0)
+    {
+        Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+    }
+
   }
   function changePriceResponse(res)
   {
